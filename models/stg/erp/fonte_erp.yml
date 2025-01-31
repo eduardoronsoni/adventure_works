@@ -7,7 +7,13 @@ sources:
       - name: salesorderheader
       - name: salesorderdetail
       - name: salesperson
+      - name: salesorderheadersalesreason
+      - name: salesreason
       - name: product
+      - name: productsubcategory
+      - name: productcategory
       - name: address
       - name: stateprovince
       - name: creditcard
+      - name: customer
+      - name: businessentity
