@@ -3,6 +3,7 @@ with
         select *
         from {{ source('erp', 'countryregion') }}
     )
+    
 
     , renamed as (
         select 
