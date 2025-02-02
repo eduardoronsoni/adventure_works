@@ -1,0 +1,22 @@
+sources:
+  - name: erp
+    description: Data contained in the PostgreSQL database from Adventure Works
+    schema: raw_adventure_works
+    database: fea24_11
+    tables:
+      - name: salesorderheader
+      - name: salesorderdetail
+      - name: salesperson
+      - name: salesorderheadersalesreason
+      - name: salesreason
+      - name: product
+      - name: productsubcategory
+      - name: productcategory
+      - name: address
+      - name: stateprovince
+      - name: countryregion
+      - name: creditcard
+      - name: customer
+      - name: person
+      - name: businessentity
+
