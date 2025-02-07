@@ -16,7 +16,9 @@ sources:
       - name: stateprovince
       - name: countryregion
       - name: creditcard
+      - name: personcreditcard
       - name: customer
+      - name: store
       - name: person
       - name: businessentity
 
