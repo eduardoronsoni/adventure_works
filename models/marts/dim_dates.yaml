@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_dates
+    description: "Dimensional table containing date-related attributes for analytics and reporting."
+    columns:
+      - name: DAY_DATE
+        description: "The full date value in the format 'YYYY-mm-dd'."
+      - name: WEEKDAY
+        description: "Numeric representation of the weekday (0 = Saturday, 6 = Friday)."
+      - name: DAY_NAME
+        description: "Full name of the weekday (e.g., Monday, Tuesday)."
+      - name: MONTH
+        description: "Numeric representation of the month (1 = January, 12 = December)."
+      - name: MONTH_NAME
+        description: "Full name of the month (e.g., January, February)."
+      - name: MONTH_ABBR
+        description: "Abbreviated name of the month (e.g., Jan, Feb)."
+      - name: QUARTER
+        description: "Numeric representation of the quarter (1 = Q1, 4 = Q4)."
+      - name: QUARTER_NAME
+        description: "Name of the quarter (e.g., 1st Quarter, 2nd Quarter)."
+      - name: SEMESTER
+        description: "Numeric representation of the semester (1 = First Semester, 2 = Second Semester)."
+      - name: SEMESTER_NAME
+        description: "Name of the semester (e.g., 1st Semester, 2nd Semester)."
+      - name: DAY_OF_YEAR
+        description: "Day number within the year (1 = January 1st, 365 = December 31st)."
+      - name: YEAR
+        description: "Year in 'YYYY' format."

@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_locations
+    description: "Dimensional table containing location details, including addresses, cities, states, and countries."
+    columns:
+      - name: PK_ADDRESS_ID
+        description: "Primary key of the address."
+      - name: ADDRESS_LINE
+        description: "Street address of the location with number."
+      - name: CITY
+        description: "City where the location is situated."
+      - name: STATE_PROVINCE_NAME
+        description: "Name of the state or province where the location is situated."
+      - name: COUNTRY_NAME
+        description: "Name of the country where the location is situated."
