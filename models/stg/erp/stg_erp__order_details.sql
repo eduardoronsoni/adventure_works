@@ -6,7 +6,7 @@ with
 
     , renamed as (
         select
-            cast(SALESORDERDETAILID as string) as pk_order_details
+            cast(SALESORDERDETAILID as string) as pk_order_details_id
             , cast(SALESORDERID as string) as fk_order_id
             , cast(PRODUCTID as string) as fk_product_id
             , cast(SPECIALOFFERID as string) as fk_offer_id

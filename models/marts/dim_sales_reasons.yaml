@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_sales_reasons
+    description: "Dimension table containing reasons why a sale was made, categorized by type."
+    columns:
+      - name: PK_SALES_REASON_ID
+        description: "Primary key that uniquely identifies a sales reason."
+        tests:
+          - unique
+          - not_null
+      
+      - name: SALES_REASON
+        description: "The specific reason why a sale was made."
+      
+      - name: SALES_REASON_TYPE
+        description: "The category of the sales reason, such as Promotion, Marketing, or Other."
+      
+      - name: MODIFIED_DATE
+        description: "The date when the sales reason record was last modified."

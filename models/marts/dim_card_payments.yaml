@@ -5,13 +5,18 @@ models:
     columns:
       - name: PK_CREDIT_CARD_ID
         description: "Primary key of the credit card."
+
       - name: CARD_TYPE
         description: "Type of credit card company (e.g. Vista, ColonailVoice)."
+
       - name: CARD_NUMBER
         description: "Credit card number."
+
       - name: EXPIRING_DATE
         description: "Expiration date of the credit card in the format 'mm/YYYY'"
+
       - name: PK_PERSON_ID
         description: "Primary key referencing the person who owns the credit card."
+        
       - name: CARD_OWNER
         description: "Full name of the credit card owner. May be NULL."
