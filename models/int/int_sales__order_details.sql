@@ -32,8 +32,6 @@ with
             , FK_ORDER_ID
             , FK_PRODUCT_ID
             , FK_OFFER_ID
-            , ROW_GUID
-            , TRACKING_NUMBER
             , ORDER_QTY
             , UNIT_PRICE
             , UNIT_PRICE_DISCOUNT

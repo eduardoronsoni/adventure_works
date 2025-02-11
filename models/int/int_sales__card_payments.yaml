@@ -1,11 +1,14 @@
 version: 2
 models:
-  - name: dim_card_payments
-    description: "Dimensional table containing credit card payment details, including card type, number, expiration date, and owner information."
+  - name: int_sales__card_payments
+    description: "Preparatory table containing credit card payment details, including card type, number, expiration date, and owner information."
     columns:
       - name: PK_CREDIT_CARD_ID
         description: "Primary key of the credit card."
-
+        tests:
+          - unique
+          - not_null
+          
       - name: CARD_TYPE
         description: "Type of credit card company (e.g. Vista, ColonailVoice)."
 

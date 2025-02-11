@@ -13,7 +13,7 @@ with
             , cast (ROWGUID as string ) as row_guid 
             , cast(CARRIERTRACKINGNUMBER as string) as  tracking_number
             , cast(ORDERQTY as int) as order_qty
-            , cast(UNITPRICE as numeric(18,2)) as unit_price
+            , cast(UNITPRICE as numeric(18,6)) as unit_price
             , cast(UNITPRICEDISCOUNT as numeric(18,2)) as unit_price_discount
             , cast(MODIFIEDDATE as date) as modified_date
         from sales_order_details
