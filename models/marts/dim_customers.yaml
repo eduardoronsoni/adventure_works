@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Dimensional table containing customer details, including personal, store, territory, and sales information."
+    columns:
+      - name: PK_CUSTOMER_ID
+        description: "Primary key of the customer."
+
+      - name: FK_PERSON_ID
+        description: "Foreign key referencing the person associated with the customer. May be NULL."
+
+      - name: FK_STORE_ID
+        description: "Foreign key referencing the store associated with the customer. May be NULL."
+
+      - name: FK_TERRITORY_ID
+        description: "Foreign key referencing the territory of the customer."
+
+      - name: FK_SALES_PERSON_ID
+        description: "Foreign key referencing the salesperson assigned to the customer. May be NULL."
+
+      - name: PERSON_FULL_NAME
+        description: "Full name of the person associated with the customer. May be NULL."
+        
+      - name: STORE_NAME
+        description: "Name of the store associated with the customer. May be NULL."

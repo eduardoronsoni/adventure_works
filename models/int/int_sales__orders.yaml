@@ -1,0 +1,85 @@
+version: 2
+
+models:
+  - name: int_sales__orders
+    description: "Preparatory table for orders, containing information about customers, shipping, payment, and order amounts."
+    columns:
+      - name: PK_ORDER_ID
+        description: "Primary key of the order made."
+        tests:
+        - unique
+        - not_null
+
+      - name: FK_TERRITORY_ID
+        description: "Foreign key referencing the territory where the sales was made ."
+
+      - name: FK_BILL_TO_ADDRESS
+        description: Identifier for the billing address where the invoice for the order is sent."
+
+      - name: FK_CUSTOMER_ID
+        description: "Foreign key referencing the customer who placed the order."
+
+      - name: FK_SHIP_TO_ADRESS_ID
+        description: "Foreign key for the shipping address of the order."
+
+      - name: FK_SHIP_METHOD_ID
+        description: "Foreign key for the shipping method used."
+
+      - name: FK_CREDIT_CARD_ID
+        description: "Foreign key for the credit card payment method."
+
+      - name: ORDER_DATE
+        description: "Date when the order was placed."
+
+      - name: DUE_DATE
+        description: "Due date for the order payment."
+
+      - name: SHIP_DATE
+        description: "Date when the order was shipped to the customer."
+
+      - name: ORDER_STATUS
+        description: "Current status of the order."
+
+      - name: ONLINE_ORDER_FLAG
+        description: "Boolean flag indicating whether the order was placed online  or offline ."
+        tests:
+        - accepted_values:
+                values: ['true', 'false']
+        
+
+      - name: SALES_PERSON_ID
+        description: "Identifier of the salesperson responsible for the order."
+
+      - name: SUBTOTAL
+        description: "Total value of the order items, excluding taxes and fees."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
+
+      - name: TAX_AMOUNT
+        description: "Total amount of taxes applied to the order."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
+
+      - name: FREIGHT
+        description: "Shipping cost associated with the order."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
+
+      - name: TOTAL_DUE
+        description: "Total amount due by the customer, including taxes and shipping."
+        tests:
+        - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
+
+      - name: ORDER_HAS_DISCOUNT
+        description: "Flag that indicates if any product on the order had a discount"
+        tests:
+        - accepted_values:
+              values: ['true', 'false']

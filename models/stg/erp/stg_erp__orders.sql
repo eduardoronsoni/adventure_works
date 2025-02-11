@@ -9,6 +9,7 @@ with
             cast(SALESORDERID as string) as pk_order_id
             , cast (TERRITORYID as string) as fk_territory_id
             , cast (BILLTOADDRESSID as string ) as fk_bill_to_address_id
+            , cast (CUSTOMERID as string) as fk_customer_id
             , cast (SHIPTOADDRESSID as string ) as fk_ship_to_adress_id
             , cast (SHIPMETHODID as string ) as fk_ship_method_id
             , cast (CREDITCARDID as string ) as fk_credit_card_id
@@ -22,7 +23,6 @@ with
             , cast (ONLINEORDERFLAG as boolean) as online_order_flag -- POSSIVELMENTE MELHORAR, VER COMO TRATAM BOOLEANO
             , cast (PURCHASEORDERNUMBER as string) as purchase_order_number
             , cast (ACCOUNTNUMBER as string) as account_number
-            , cast (CUSTOMERID as string) as customer_id
             , cast (SALESPERSONID as string ) as sales_person_id
             , cast (CREDITCARDAPPROVALCODE as string ) as credit_card_approval_code
             , cast (SUBTOTAL as numeric(18,2) ) as subtotal

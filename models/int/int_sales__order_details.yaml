@@ -1,0 +1,63 @@
+version: 2
+
+models:
+  - name: int_sales__order_details
+    description: "Preparatory table containing detailed information about each order, including products, pricing, discounts, and freight costs. Each row represents a unique product within an order."
+    columns:
+      - name: PK_ORDER_DETAILS_ID
+        description: "Primary key identifying each order detail record."
+        tests:
+          - unique
+          - not_null
+
+      - name: FK_ORDER_ID
+        description: "Foreign key referencing the order in the fact_orders table."
+
+      - name: FK_PRODUCT_ID
+        description: "Foreign key referencing the product in the dim_products table."
+
+      - name: FK_OFFER_ID
+        description: "Foreign key referencing special offers or promotions applied to the product."
+
+      - name: ORDER_QTY
+        description: "Quantity of the product ordered."
+        tests:
+        - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
+
+      - name: UNIT_PRICE
+        description: "Unit price of the product at the time of purchase."
+        tests:
+        - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
+
+      - name: UNIT_PRICE_DISCOUNT
+        description: "Discount applied per unit of the product."
+        tests:
+        - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 1
+              strictly: false
+
+      - name: PRODUCT_HAS_DISCOUNT
+        description: "Boolean flag indicating whether the product has a discount (true/false)."
+        tests:
+        - accepted_values:
+                values: ['true', 'false']
+        
+
+      - name: PRODUCT_TOTAL
+        description: "Total price for the product in the order, after any discounts."
+        tests:
+        - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
+
+      - name: PARTIAL_FREIGHT
+        description: "Freight cost allocated to this specific product in the order."
+        tests:
+        - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false

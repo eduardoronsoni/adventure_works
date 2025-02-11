@@ -5,20 +5,108 @@ sources:
     database: fea24_11
     tables:
       - name: salesorderheader
+        columns:
+          - name: SalesOrderID
+            tests: 
+              - unique
+              - not_null
       - name: salesorderdetail
+        columns: 
+          - name: SalesOrderDetailID
+            tests: 
+              - unique
+              - not_null
       - name: salesperson
+        columns: 
+          - name: BusinessEntityID
+            tests:
+              - unique
+              - not_null
       - name: salesorderheadersalesreason
+        columns:
+          - name: SalesOrderID
+            tests:
+              - not_null
+          - name: SalesReasonID
+            tests:
+              - not_null
       - name: salesreason
+        columns:
+          - name: SalesReasonID
+            tests:
+              - unique
+              - not_null
       - name: product
+        columns:
+          - name: ProductID
+            tests:
+              - unique
+              - not_null
       - name: productsubcategory
+        columns:
+          - name: ProductSubcategoryID
+            tests:
+              - unique
+              - not_null
       - name: productcategory
+        columns:
+          - name: ProductCategoryID
+            tests:
+              - unique
+              - not_null
       - name: address
+        columns:
+          - name: AddressID
+            tests:
+              - unique
+              - not_null
       - name: stateprovince
+        columns:
+          - name: StateProvinceID
+            tests:
+              - unique
+              - not_null
       - name: countryregion
+        columns:
+          - name: CountryRegionCode
+            tests:
+              - unique
+              - not_null
       - name: creditcard
+        columns:
+          - name: CreditCardID
+            tests:
+              - unique
+              - not_null
       - name: personcreditcard
+        columns:
+          - name: BusinessEntityID
+            tests:
+              - not_null
+          - name: CreditCardID
+            tests:
+              - not_null
       - name: customer
+        columns:
+          - name: CustomerID
+            tests:
+              - unique
+              - not_null
       - name: store
+        columns:
+          - name: BusinessEntityID
+            tests:
+              - unique
+              - not_null
       - name: person
+        columns:
+          - name: BusinessEntityID
+            tests:
+              - unique
+              - not_null
       - name: businessentity
-
+        columns:
+          - name: BusinessEntityID
+            tests:
+              - unique
+              - not_null

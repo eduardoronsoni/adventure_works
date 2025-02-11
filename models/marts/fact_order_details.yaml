@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: fact_order_details
+    description: "Fact table containing detailed information about each order, including products, pricing, discounts, and freight costs. Each row represents a unique product within an order."
+    columns:
+      - name: PK_ORDER_DETAILS_ID
+        description: "Primary key identifying each order detail record."
+
+
+      - name: FK_ORDER_ID
+        description: "Foreign key referencing the order in the fact_orders table."
+
+      - name: FK_PRODUCT_ID
+        description: "Foreign key referencing the product in the dim_products table."
+
+      - name: FK_OFFER_ID
+        description: "Foreign key referencing special offers or promotions applied to the product."
+
+      - name: ORDER_QTY
+        description: "Quantity of the product ordered."
+
+
+      - name: UNIT_PRICE
+        description: "Unit price of the product at the time of purchase."
+
+      - name: UNIT_PRICE_DISCOUNT
+        description: "Discount applied per unit of the product."
+
+      - name: PRODUCT_HAS_DISCOUNT
+        description: "Boolean flag indicating whether the product has a discount (true/false)."
+
+      - name: PRODUCT_TOTAL
+        description: "Total price for the product in the order, after any discounts."
+
+      - name: PARTIAL_FREIGHT
+        description: "Freight cost allocated to this specific product in the order."

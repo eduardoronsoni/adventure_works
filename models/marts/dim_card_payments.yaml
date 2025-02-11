@@ -1,0 +1,22 @@
+version: 2
+models:
+  - name: dim_card_payments
+    description: "Dimensional table containing credit card payment details, including card type, number, expiration date, and owner information."
+    columns:
+      - name: PK_CREDIT_CARD_ID
+        description: "Primary key of the credit card."
+
+      - name: CARD_TYPE
+        description: "Type of credit card company (e.g. Vista, ColonailVoice)."
+
+      - name: CARD_NUMBER
+        description: "Credit card number."
+
+      - name: EXPIRING_DATE
+        description: "Expiration date of the credit card in the format 'mm/YYYY'"
+
+      - name: FK_PERSON_ID
+        description: "Foreign key referencing the person who owns the credit card."
+        
+      - name: CARD_OWNER
+        description: "Full name of the credit card owner. May be NULL."
