@@ -27,3 +27,6 @@ models:
         
       - name: STORE_NAME
         description: "Name of the store associated with the customer. May be NULL."
+
+      - name: CUSTOMER_NAME
+        description: "Mainly Store Name. If store name is null, then it will search for the person full name."
