@@ -4,17 +4,14 @@ models:
   - name: dim_sales_reason
     description: "Dimension table containing sales reasons, including their type and association with sales orders."
     columns:
-    - name: PK_SALES_ORDER_ID
+    - name: FK_SALES_ORDER_ID
       description: "Foreign key referencing the sales order associated with the reason."
 
 
-    - name: SALES_REASON_1
-      description: "One of the sales reasons informed. There is a max of 3"
+    - name: SALES_REASON
+      description: "The informed sales reason"
 
 
-    - name: SALES_REASON_2
-      description: "One of the sales reasons informed. There is a max of 3"
+    - name: SALES_REASON_TYPE
+      description: "The informed sales reason type"
 
-
-    - name: SALES_REASON_3
-      description: "One of the sales reasons informed. There is a max of 3"
