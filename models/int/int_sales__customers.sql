@@ -25,6 +25,7 @@ select
     , stores.fk_sales_person_id
     , people.person_full_name
     , stores.store_name
+    , coalesce( stores.store_name, people.person_full_name ) as customer_name
 from customers
 left join people on customers.fk_person_id = people.pk_person_id
 left join stores on customers.fk_store_id = stores.pk_store_id
